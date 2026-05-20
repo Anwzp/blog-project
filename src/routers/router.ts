@@ -4,7 +4,8 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'root',
-        component: () => import('../views/PageLayout')
+        component: () => import('../views/PageLayout'),
+        children: []
     }
 ]
 

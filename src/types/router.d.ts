@@ -8,3 +8,10 @@ declare module 'vue' {
         $route: RouteLocationNormalizedLoaded
     }
 }
+
+declare module 'vue-router' {
+    interface RouteMeta {
+        title?: string
+        requiresAuth?: boolean
+    }
+}
