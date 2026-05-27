@@ -18,4 +18,9 @@ export default defineConfig({
       resolvers: [TDesignResolver({ library: 'vue-next' })],
     }),
   ],
+   resolve: {
+    alias: {
+      '@': '/src',
+    },
+  },
 })

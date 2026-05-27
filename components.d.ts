@@ -11,7 +11,16 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Footer: typeof import('./src/components/PageLayout/Footer.vue')['default']
+    Header: typeof import('./src/components/PageLayout/Header.vue')['default']
+    Index: typeof import('./src/components/PageLayout/Index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TContent: typeof import('tdesign-vue-next')['Content']
+    TFooter: typeof import('tdesign-vue-next')['Footer']
+    THeader: typeof import('tdesign-vue-next')['Header']
+    TLayout: typeof import('tdesign-vue-next')['Layout']
+    TSpace: typeof import('tdesign-vue-next')['Space']
+    TTabs: typeof import('tdesign-vue-next')['Tabs']
   }
 }

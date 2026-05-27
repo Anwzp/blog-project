@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-
+import RouterUtil from './router.util'
+const dynamicRoutes = RouterUtil.asyncImportAll()
 const routes: RouteRecordRaw[] = [
     {
         path: '/',
         name: 'root',
-        component: () => import('../views/PageLayout'),
+        component: () => import('../components/PageLayout'),
         children: []
     }
 ]

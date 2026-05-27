@@ -1,0 +1,216 @@
+/* theme-v4.css */
+@import "tailwindcss";
+
+/* 1. 支持通过 .dark 类切换暗色主题 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 2. 设计令牌：亮色模式（默认） */
+:root {
+  /* 品牌色 */
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #dbeafe;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* 背景色 */
+  --bg-page: #f8fafc;
+  --bg-container: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-code: #0f172a;
+
+  /* 文本色 */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #64748b;
+  --text-disabled: #94a3b8;
+  --text-white: #ffffff;
+
+  /* 边框色 */
+  --border-light: #e2e8f0;
+  --border-default: #cbd5e1;
+  --border-dark: #94a3b8;
+
+  /* 阴影 */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06), 0 1px 1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 6px rgba(15, 23, 42, 0.06), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 10px 15px rgba(15, 23, 42, 0.08), 0 4px 6px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 25px rgba(15, 23, 42, 0.1), 0 8px 10px rgba(15, 23, 42, 0.04);
+
+  /* 圆角 */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* 字体 */
+  --font-family: Inter, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* 字号 */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 32px;
+  --font-size-4xl: 40px;
+  --font-size-5xl: 52px;
+
+  /* 行高 */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.8;
+
+  /* 动画时长 */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s ease;
+  --transition-slow: 0.35s ease;
+
+  /* 层级 */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal: 1050;
+  --z-tooltip: 1070;
+
+  /* 布局宽度 */
+  --layout-max-width: 1280px;
+  --layout-content-width: 860px;
+  --layout-sidebar-width: 320px;
+}
+
+/* 3. 暗色模式覆盖 */
+html.dark {
+  --bg-page: #020617;
+  --bg-container: #0f172a;
+  --bg-card: #111827;
+  --bg-card-hover: #1e293b;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-disabled: #64748b;
+  --border-light: #1e293b;
+  --border-default: #334155;
+  --border-dark: #475569;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* 4. @theme 定义：将 CSS 变量映射到 Tailwind v4 工具类 */
+@theme {
+  /* ---------- 颜色 ---------- */
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-light: var(--color-primary-light);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-danger: var(--color-danger);
+
+  --color-background-page: var(--bg-page);
+  --color-background-container: var(--bg-container);
+  --color-background-card: var(--bg-card);
+  --color-background-card-hover: var(--bg-card-hover);
+  --color-background-code: var(--bg-code);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-white: var(--text-white);
+
+  --color-border-light: var(--border-light);
+  --color-border-default: var(--border-default);
+  --color-border-dark: var(--border-dark);
+
+  /* ---------- 字体族 ---------- */
+  --font-sans: var(--font-family);
+  --font-mono: var(--font-mono);
+
+  /* ---------- 字号 & 行高 ---------- */
+  --font-size-xs: var(--font-size-xs);
+  --line-height-xs: var(--line-height-normal);
+  --font-size-sm: var(--font-size-sm);
+  --line-height-sm: var(--line-height-normal);
+  --font-size-base: var(--font-size-base);
+  --line-height-base: var(--line-height-relaxed);
+  --font-size-lg: var(--font-size-lg);
+  --line-height-lg: var(--line-height-normal);
+  --font-size-xl: var(--font-size-xl);
+  --line-height-xl: var(--line-height-normal);
+  --font-size-2xl: var(--font-size-2xl);
+  --line-height-2xl: var(--line-height-tight);
+  --font-size-3xl: var(--font-size-3xl);
+  --line-height-3xl: var(--line-height-tight);
+  --font-size-4xl: var(--font-size-4xl);
+  --line-height-4xl: var(--line-height-tight);
+  --font-size-5xl: var(--font-size-5xl);
+  --line-height-5xl: var(--line-height-tight);
+
+  /* ---------- 间距 ---------- */
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-5: var(--space-5);
+  --spacing-6: var(--space-6);
+  --spacing-8: var(--space-8);
+  --spacing-10: var(--space-10);
+  --spacing-12: var(--space-12);
+  --spacing-16: var(--space-16);
+  --spacing-20: var(--space-20);
+
+  /* ---------- 圆角 ---------- */
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-full: var(--radius-full);
+
+  /* ---------- 阴影 ---------- */
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+
+  /* ---------- 动画时长 ---------- */
+  --duration-fast: var(--transition-fast);
+  --duration-base: var(--transition-base);
+  --duration-slow: var(--transition-slow);
+
+  /* ---------- 层级 ---------- */
+  --z-index-dropdown: var(--z-dropdown);
+  --z-index-sticky: var(--z-sticky);
+  --z-index-fixed: var(--z-fixed);
+  --z-index-modal: var(--z-modal);
+  --z-index-tooltip: var(--z-tooltip);
+
+  /* ---------- 最大宽度 / 宽度 ---------- */
+  --max-width-layout: var(--layout-max-width);
+  --max-width-content: var(--layout-content-width);
+  --width-sidebar: var(--layout-sidebar-width);
+}

@@ -1,17 +1,21 @@
-import type { Router, RouteLocationNormalizedLoaded } from 'vue-router'
-
+import type { Router, RouteLocationNormalizedLoaded, RouteRecordRaw } from 'vue-router'
+export interface PageRouterConfig extends RouteRecordRaw {
+    name: string;
+    path: string;
+    component: () => Promise<typeof import('*.vue')>
+    meta: RouterMeta
+}
+export interface RouterMeta {
+    title: string;
+    isKeepAlive?: boolean;
+    parent: string;
+}
 export { }
 
-declare module 'vue' {
-    interface ComponentCustomProperties {
-        $router: Router
-        $route: RouteLocationNormalizedLoaded
-    }
+declare module 'vue-router' {
+
 }
 
-declare module 'vue-router' {
-    interface RouteMeta {
-        title?: string
-        requiresAuth?: boolean
-    }
+declare global {
+    type PageRouterConfig = PageRouterConfig
 }
