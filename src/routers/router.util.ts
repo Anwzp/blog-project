@@ -1,6 +1,6 @@
 // src/router/auto-routes.ts
 import { z } from 'zod'
-import { type RouteRecordRaw, type RouteComponent } from 'vue-router'
+import { type RouteRecordRaw} from 'vue-router'
 const childSchema = z.object({
     name: z.string(),
     path: z.string(),
@@ -58,7 +58,6 @@ class RouterUtil {
             rootRouter[key].children = routerMap[key] || [];
             routerList.push(rootRouter[key])
         })
-        console.log("🚀 ~ RouterUtil ~ asyncImportAll ~ rootRouter:", routerList)
         return routerList
     }
 
