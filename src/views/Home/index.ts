@@ -1,10 +1,10 @@
 export default {
+    parent: ParentRouterKey.BlogPageLayout,
     name: 'Home',
-    path: '/',
+    path: '/home',
     meta: {
         title: '首页',
         isKeepAlive: true,
-        parent: 'root'
     },
     component: () => import('./home.vue')
 } satisfies PageRouterConfig;

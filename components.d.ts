@@ -13,7 +13,6 @@ declare module 'vue' {
   export interface GlobalComponents {
     Footer: typeof import('./src/components/PageLayout/Footer.vue')['default']
     Header: typeof import('./src/components/PageLayout/Header.vue')['default']
-    Index: typeof import('./src/components/PageLayout/Index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TContent: typeof import('tdesign-vue-next')['Content']

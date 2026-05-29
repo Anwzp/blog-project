@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 /* ========================================
    Personal Blog Theme Design Tokens
    Style: Minimal Tech Blog
@@ -172,42 +173,44 @@ html.dark {
 }
 
 /* ========================================
-   Global Reset
+   Global Reset - 使用 @layer base 确保可以被工具类覆盖
 ======================================== */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-html {
-  scroll-behavior: smooth;
-}
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  font-family: var(--font-family);
-  background: var(--bg-page);
-  color: var(--text-primary);
-  line-height: var(--line-height-normal);
-  transition:
-    background var(--transition-base),
-    color var(--transition-base);
-}
+  body {
+    font-family: var(--font-family);
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: var(--line-height-normal);
+    transition:
+      background var(--transition-base),
+      color var(--transition-base);
+  }
 
-img {
-  max-width: 100%;
-  display: block;
-}
+  img {
+    max-width: 100%;
+    display: block;
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-ul,
-ol {
-  list-style: none;
+  ul,
+  ol {
+    list-style: none;
+  }
 }
 
 @media (max-width: 1024px) {

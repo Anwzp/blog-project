@@ -10,15 +10,32 @@ export default defineConfig({
     vue(),
     tailwindcss(),
     AutoImport({
+      imports: [
+        'vue',
+        'vue-router',
+        'pinia',
+
+      ],
       resolvers: [TDesignResolver({
         library: 'vue-next',
       })],
+    }),
+    AutoImport({
+      // 引入你的枚举文件路径
+      imports: [
+        {
+          '/src/types/enums/router.enum.ts': [
+            'ParentRouterKey', // 导入常量对象
+          ],
+        },
+      ],
+      dts: '/src/auto-imports.d.ts', // 生成类型定义
     }),
     Components({
       resolvers: [TDesignResolver({ library: 'vue-next' })],
     }),
   ],
-   resolve: {
+  resolve: {
     alias: {
       '@': '/src',
     },
