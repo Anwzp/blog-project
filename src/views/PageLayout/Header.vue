@@ -5,11 +5,10 @@
     <div class="container-logo"></div>
     <div>
       <router-link
-        to="/home"
         v-for="tab in tabs"
         :key="tab.value"
         :to="tab.value"
-        :class="{ 'text-primary': tab.active }"
+        :class="{ 'container-tab': true, 'container-tab-active': tab.active }"
       >
         {{ tab.name }}
       </router-link>
@@ -32,4 +31,13 @@ const tabs: Tab[] = [
   { name: "联系", active: false, value: "/contact" },
 ];
 </script>
-<style scoped></style>
+<style scoped>
+@reference "../../theme/tailwind.css";
+
+.container-tab {
+  @apply px-6 border-b-2 border-b-primary h-full;
+}
+.container-tab-active {
+  @apply text-primary;
+}
+</style>

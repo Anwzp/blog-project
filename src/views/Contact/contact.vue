@@ -1,3 +1,3 @@
 <template>
-  <div>首页</div>
+  <div>联系我</div>
 </template>

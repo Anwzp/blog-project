@@ -98,10 +98,6 @@
   --space-5: 20px;
   --space-6: 24px;
   --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
 
   /* ========================================
      Typography
@@ -214,8 +210,12 @@ html.dark {
 }
 
 @media (max-width: 1024px) {
-  .container {
-    padding: 0 var(--space-4);
+  :root{
+    --space-1: 8px;
+    --space-2: 16px;
+    --space-3: 24px;
+    --space-4: 32px;
+    
   }
 }
 
